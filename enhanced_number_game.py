@@ -19,6 +19,7 @@ player_name = input("Hello, what is your name? ")
 number_of_guesses = 0
 level = get_difficulty_level()
 number = get_random_number(level)
+score = 0
 
 
 print('I\'m glad to meet you! {} \nLet\'s play a game with you, I will think a number then you will guess, alright? \nDon\'t forget! You have only 3 chances so guess:'.format(player_name))
@@ -29,11 +30,13 @@ while number_of_guesses < 3:
     if guess < number:
         print('Your estimate is too low, go up a little!')
     if guess > number:
-        print('Your estimate is too high, go down a bit!')
+       print('Your estimate is too high, go down a bit!')
     if guess == number:
         break
+    
 
 if guess == number:
-    print( 'Congratulations {}, you guessed the number in {} tries!'.format(player_name, number_of_guesses))
+    score = score + 1
+    print( 'Congratulations {}, you guessed the number in {} tries! Your score so far is {}'.format(player_name, number_of_guesses, score))
 else:
     print('Close but no cigar, you couldn\'t guess the number. \nWell, the number was {}.'.format(number))
