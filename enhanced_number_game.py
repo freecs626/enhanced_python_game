@@ -22,10 +22,13 @@ number = get_random_number(level)
 score = 0
 
 
-print('I\'m glad to meet you! {} \nLet\'s play a game with you, I will think a number then you will guess, alright? \nDon\'t forget! You have only 3 chances so guess:'.format(player_name))
+print('I\'m glad to meet you! {} \nLet\'s play a game with you, I will think a number then you will guess, alright? \nDon\'t forget! Remember: You have only 3 chances. Guess a number:'.format(player_name))
 
 while number_of_guesses < 3:
-    guess = int(input())
+    try:
+        guess = int(input())
+    except: print("It's not an integer. Please enter an integer.")
+    continue
     number_of_guesses += 1
     if guess < number:
         print('Your estimate is too low, go up a little!')
@@ -33,6 +36,7 @@ while number_of_guesses < 3:
        print('Your estimate is too high, go down a bit!')
     if guess == number:
         break
+
 
 if guess == number:
     score = score + 1
