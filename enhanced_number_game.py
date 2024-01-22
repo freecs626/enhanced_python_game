@@ -33,7 +33,6 @@ while number_of_guesses < 3:
        print('Your estimate is too high, go down a bit!')
     if guess == number:
         break
-    
 
 if guess == number:
     score = score + 1
