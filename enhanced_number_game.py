@@ -27,7 +27,7 @@ print('I\'m glad to meet you! {} \nLet\'s play a game with you, I will think a n
 while number_of_guesses < 3:
     try:
         guess = int(input())
-    except: print("It's not an integer. Please enter an integer.")
+    except ValueError: print("It's not an integer. Please enter an integer.")
     continue
     number_of_guesses += 1
     if guess < number:
