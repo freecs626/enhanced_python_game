@@ -32,19 +32,25 @@ print('Remember: You have only 3 chances. Guess a number:')
 
 while number_of_guesses < 3:
     try:
-        guess = int(input())
-        number_of_guesses += 1
+        guess = int(input())    
+        number_of_guesses += 1  
     except ValueError: 
         print("It's not an integer. Please enter an integer. Try again.") 
         continue
 
     if guess < number:
         print('Your estimate is too low, go up a little. Try again!')
-    if guess > number:
-       print('Your estimate is too high, go down a bit. Try again!')
+    elif guess > number:
+        print('Your estimate is too high, go down a bit. Try again!')
     elif guess == number:
         score = score + 1
         print( 'Congratulations {}, you guessed the number in {} tries! Your score so far is {}'.format(player_name, number_of_guesses, score))
-    else:
+        break
+
+    if number_of_guesses == 3:
         print('Close but no cigar, you couldn\'t guess the number. \nWell, the number was {}.'.format(number))
-    break
+
+        
+        
+    
+    
