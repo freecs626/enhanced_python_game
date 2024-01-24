@@ -48,9 +48,4 @@ while number_of_guesses < 3:
         break
 
     if number_of_guesses == 3:
-        print('Close but no cigar, you couldn\'t guess the number. \nWell, the number was {}.'.format(number))
-
-        
-        
-    
-    
+        print('Close but no cigar, you couldn\'t guess the number. \nWell, the number was {}.'.format(number)) 
